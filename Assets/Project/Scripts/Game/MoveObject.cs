@@ -13,12 +13,12 @@ public class MoveObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //throw move object upwards
+        //throw or move object
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
             Random.Range(min_XSpeed, max_XSpeed), 
             Random.Range(min_YSpeed, max_YSpeed)
         );
-        //wait and destroy
+        //wait and destroy the object
         Destroy(gameObject, lifetime);
     }
 
