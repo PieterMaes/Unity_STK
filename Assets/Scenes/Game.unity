@@ -368,6 +368,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481328535}
   m_CullTransparentMesh: 1
+--- !u!1 &651470425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651470427}
+  - component: {fileID: 651470426}
+  m_Layer: 0
+  m_Name: OrbSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &651470426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651470425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3fc2cee011b9d47b6aff9fceb8ed4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5996278078047971068, guid: 38cff72993962044689c13e102c1fd99, type: 3}
+  interval: 10
+  minX: -8
+  maxX: 8
+  y: -5
+  sprites:
+  - {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
+--- !u!4 &651470427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651470425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.400836, y: -0.89527386, z: 64.75352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1185659694
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +430,7 @@ GameObject:
   - component: {fileID: 1185659696}
   - component: {fileID: 1185659695}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: CatSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,10 +454,10 @@ MonoBehaviour:
   maxX: 7
   y: 5
   sprites:
-  - {fileID: -6153635118755834211, guid: cc51341741d55b04aa845bb36ebf34b7, type: 3}
-  - {fileID: -3586708198476076297, guid: cc51341741d55b04aa845bb36ebf34b7, type: 3}
-  - {fileID: 8874314492661242570, guid: cc51341741d55b04aa845bb36ebf34b7, type: 3}
-  - {fileID: 8170697188945988079, guid: cc51341741d55b04aa845bb36ebf34b7, type: 3}
+  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+  - {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  - {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
 --- !u!4 &1185659696
 Transform:
   m_ObjectHideFlags: 0

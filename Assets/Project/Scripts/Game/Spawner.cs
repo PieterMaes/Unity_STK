@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour
         instance.transform.position = new Vector2(
             Random.Range(minX, maxX), y
             );
+        instance.transform.SetParent(transform);
 
         //change srpite of object
         Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
