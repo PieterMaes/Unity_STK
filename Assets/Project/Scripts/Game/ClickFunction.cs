@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClickFunction : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class ClickFunction : MonoBehaviour
         }
         else
         {
-            //kill player
+            SceneManager.LoadScene("Death");
         }
     }
 }

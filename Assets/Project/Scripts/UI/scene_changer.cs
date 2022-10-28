@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class scene_changer : MonoBehaviour
 {
+    [Header("Goto this scene")]
+    public string name;
+
     // Start is called before the first frame update
     void Start()
     {
