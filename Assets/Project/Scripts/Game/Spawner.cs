@@ -16,15 +16,52 @@ public class Spawner : MonoBehaviour
     [Header ("Visuals")]
         public Sprite[] sprites;
 
+    [Header("Regression rate per increase event")]
+        public float regression_rate;
+
+    [Header("Interval at which spawn rate increases")]
+        public float timeUntilSpawnRateIncrease;
+
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Spawn", interval, interval);
     }
 
+    private void Update()
+    {
+        
+    }
+
     // Update is called once per frame
     private void Spawn()
     {
+
+        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 50)
+        {
+            this.interval -= (float)2;
+            CancelInvoke();
+            InvokeRepeating("Spawn", interval, interval);
+        };
+        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 150)
+        {
+            this.interval -= (float)1.5;
+            CancelInvoke();
+            InvokeRepeating("Spawn", interval, interval);
+        };
+        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 300)
+        {
+            this.interval *= (float)0.85;
+            CancelInvoke();
+            InvokeRepeating("Spawn", interval, interval);
+        };
+        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 500)
+        {
+            this.interval *= (float)0.9;
+            CancelInvoke();
+            InvokeRepeating("Spawn", interval, interval);
+        };
+
         //add object instance at coordinates set
         GameObject instance = Instantiate(prefab);
         instance.transform.position = new Vector2(
@@ -36,4 +73,5 @@ public class Spawner : MonoBehaviour
         Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
         instance.GetComponent<SpriteRenderer>().sprite = randomSprite;
     }
+
 }

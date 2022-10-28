@@ -418,6 +418,8 @@ MonoBehaviour:
   y: -5
   sprites:
   - {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
+  regression_rate: 0
+  timeUntilSpawnRateIncrease: 0
 --- !u!4 &651470427
 Transform:
   m_ObjectHideFlags: 0
@@ -660,6 +662,18 @@ PrefabInstance:
     - target: {fileID: 4419700298836411661, guid: d061fc64f05ec8446865a64d1948c040, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419700298836411666, guid: d061fc64f05ec8446865a64d1948c040, type: 3}
+      propertyPath: interval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419700298836411666, guid: d061fc64f05ec8446865a64d1948c040, type: 3}
+      propertyPath: regression_rate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419700298836411666, guid: d061fc64f05ec8446865a64d1948c040, type: 3}
+      propertyPath: timeUntilSpawnRateIncrease
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4419700298836411667, guid: d061fc64f05ec8446865a64d1948c040, type: 3}
       propertyPath: m_Name
