@@ -20,8 +20,10 @@ public class HitHardSoft : MonoBehaviour
 
     void Start()
     {
-        UduinoManager.Instance.pinMode(buttonHard, PinMode.Input_pullup);
-        UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input_pullup);
+        //UduinoManager.Instance.pinMode(buttonHard, PinMode.Input_pullup);
+        //UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input_pullup);
+        UduinoManager.Instance.pinMode(buttonHard, PinMode.Input);
+        UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input);
     }
 
     void Update()
@@ -31,14 +33,21 @@ public class HitHardSoft : MonoBehaviour
 
         // In this case, we compare the current button value to the previous button value, 
         // to trigger the change only once the value change.
-        if (buttonValueHard == 0) {
+        if (buttonValueHard == 1) {
             testCircle.GetComponent<Renderer>().material.color = Color.red;
         }
-        if(buttonValueSoft == 0)
+        if (buttonValueSoft == 1)
         {
             testCircle.GetComponent<Renderer>().material.color = Color.green;
-            ;
         }
+        
+        if(buttonValueHard != 1 && buttonValueSoft != 1) {
+            testCircle.GetComponent<Renderer>().material.color = Color.white;
+        }
+        /*
+        buttonValueHard = 0;
+        buttonValueSoft = 0;
+        */
 
     }
     /*
