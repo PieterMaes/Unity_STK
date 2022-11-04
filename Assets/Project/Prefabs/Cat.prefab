@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min_XSpeed: 0
   max_XSpeed: 0
-  min_YSpeed: -1
+  min_YSpeed: -3
   max_YSpeed: -10
   lifetime: 3
 --- !u!114 &-2675189588074618248
