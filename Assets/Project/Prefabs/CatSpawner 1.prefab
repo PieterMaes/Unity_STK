@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4419700298836411661}
   - component: {fileID: 4419700298836411666}
   m_Layer: 0
-  m_Name: CatSpawner
+  m_Name: CatSpawner 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
