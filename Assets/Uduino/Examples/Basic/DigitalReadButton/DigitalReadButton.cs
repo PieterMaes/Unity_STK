@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Uduino;
+using UnityEngine.SceneManagement;
 
 public class DigitalReadButton : MonoBehaviour {
 
-    public int button = 9;
-    public GameObject buttonGameObject;
+    public int button = 8;
+    public GameObject Start_Button;
 
     int buttonValue = 0;
     int prevButtonValue = 0;
@@ -16,7 +17,7 @@ public class DigitalReadButton : MonoBehaviour {
         UduinoManager.Instance.pinMode(button, PinMode.Input_pullup);
     }
 
-    void Update ()
+    void Update()
     {
         buttonValue = UduinoManager.Instance.digitalRead(button);
 
@@ -26,27 +27,15 @@ public class DigitalReadButton : MonoBehaviour {
         {
             if (buttonValue == 0)
             {
-                PressedDown();
+                SceneManager.LoadScene("Game");
             }
             else if (buttonValue == 1)
             {
-                PressedUp();
+                
             }
             prevButtonValue = buttonValue; // Here we assign prev button value to the new value
         }
 
-    }
-
-    void PressedDown()
-    {
-        buttonGameObject.GetComponent<Renderer>().material.color = Color.red;
-        buttonGameObject.transform.Translate(Vector3.down / 20);
-    }
-
-    void PressedUp()
-    {
-        buttonGameObject.GetComponent<Renderer>().material.color = Color.green;
-        buttonGameObject.transform.Translate(Vector3.up / 20);
     }
 
 }
