@@ -1855,11 +1855,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PixelManUI_61: -548537548503059592
       PixelManUI_5: 4965950395785480361
       PixelManUI_26: -942640856001687897
       PixelManUI_43: -6970224985187608698
       PixelManUI_66: 7234796881225281974
+      PixelManUI_20: 779093511675729743
       PixelManUI_13: -1812541346156696564
       PixelManUI_53: 7288361014003734632
       PixelManUI_28: -5197888338404436273
@@ -1925,7 +1925,7 @@ TextureImporter:
       PixelManUI_56: -2353766721717150103
       PixelManUI_49: 4129179263951772535
       PixelManUI_47: -3933728536644234703
-      PixelManUI_20: 779093511675729743
+      PixelManUI_61: -548537548503059592
       PixelManUI_31: -1050892038266779310
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -19,8 +19,10 @@ public class scene_changer : MonoBehaviour
     {
         
     }
-	
-	public void ChangeScene (string name){
+
+	//Function gets called when startbutton is pushed (On Click)
+	public void ChangeScene (string name)
+    {
 		SceneManager.LoadScene (name);
 	}
 }
