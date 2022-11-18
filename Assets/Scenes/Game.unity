@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   websocketToken: ZThVSJJQgybeAULx5fJYrCcOAYaiVVpqzpbFK8KTvAMgSNzpU870dD1svARlsdaK
   hyperateID: 41F3
-  HR: 70
+  HR: 39
 --- !u!114 &1599874982
 MonoBehaviour:
   m_ObjectHideFlags: 0

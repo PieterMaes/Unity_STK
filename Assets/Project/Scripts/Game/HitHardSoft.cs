@@ -11,7 +11,6 @@ public class HitHardSoft : MonoBehaviour
     public int buttonSoft = 9;
 
     public GameObject testCircle;
-    public GameObject HR; 
 
     int buttonValueHard = 0;
     //int prevButtonValueHard = 0;
@@ -45,16 +44,12 @@ public class HitHardSoft : MonoBehaviour
         if(buttonValueHard != 1 && buttonValueSoft != 1) {
             testCircle.GetComponent<Renderer>().material.color = Color.white;
         }
-        /*
-        buttonValueHard = 0;
-        buttonValueSoft = 0;
-        */
-        /*
-        if (HR.Find(HR) < 70)
+        
+        if (GameObject.Find("HR").transform.GetComponent<hyperateSocket>().getHR < 70)
         {
             testCircle.GetComponent<Renderer>().material.color = Color.blue;
         }
-        */
+        
     }
     /*
     void PressedDown()
