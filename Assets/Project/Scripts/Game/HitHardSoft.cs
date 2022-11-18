@@ -11,6 +11,7 @@ public class HitHardSoft : MonoBehaviour
     public int buttonSoft = 9;
 
     public GameObject testCircle;
+    public GameObject HR; 
 
     int buttonValueHard = 0;
     //int prevButtonValueHard = 0;
@@ -48,7 +49,12 @@ public class HitHardSoft : MonoBehaviour
         buttonValueHard = 0;
         buttonValueSoft = 0;
         */
-
+        /*
+        if (HR.Find(HR) < 70)
+        {
+            testCircle.GetComponent<Renderer>().material.color = Color.blue;
+        }
+        */
     }
     /*
     void PressedDown()

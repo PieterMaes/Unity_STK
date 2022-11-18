@@ -555,6 +555,7 @@ MonoBehaviour:
   buttonHard: 8
   buttonSoft: 9
   testCircle: {fileID: 581912125}
+  HR: {fileID: 1599874979}
 --- !u!212 &581912127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -753,7 +754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 158.90997, y: 62.225006}
+  m_AnchoredPosition: {x: 158.90991, y: 62.225006}
   m_SizeDelta: {x: 317.84, y: 124.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895861776
