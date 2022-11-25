@@ -8,8 +8,8 @@ public class BoxTapTile : MonoBehaviour
     public Sprite noneSprite;
     public Sprite boxSprite;
     public Sprite tapSprite;
-    private Collider2D colliderBox;
-    private Collider2D colliderTap;
+    private BoxCollider2D colliderBox;
+    private CircleCollider2D colliderTap;
 
     // Start is called before the first frame update
 
@@ -30,19 +30,21 @@ public class BoxTapTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<CircleCollider2D>().enabled = false;
+
         if (Input.GetKeyDown(KeyCode.B))
         {
-            this.GetComponent<BoxCollider2D>().enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = boxSprite;
+            this.GetComponent<BoxCollider2D>().enabled = true;
             colliderBox.enabled = true;
         }
         else if (Input.GetKeyUp(KeyCode.B)) {
-            this.GetComponent<BoxCollider2D>().enabled = false;
             this.GetComponent<SpriteRenderer>().sprite = noneSprite;
-            colliderBox.enabled = false;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            colliderBox.enabled = false;    
         }
-        
-        if (Input.GetKeyDown(KeyCode.T))
+
         {
             this.GetComponent<CircleCollider2D>().enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = tapSprite;
