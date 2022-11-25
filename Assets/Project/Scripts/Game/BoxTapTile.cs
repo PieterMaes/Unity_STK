@@ -8,7 +8,8 @@ public class BoxTapTile : MonoBehaviour
     public Sprite noneSprite;
     public Sprite boxSprite;
     public Sprite tapSprite;
-    private Collider2D colider;
+    private Collider2D colliderBox;
+    private Collider2D colliderTap;
 
     // Start is called before the first frame update
 
@@ -19,9 +20,11 @@ public class BoxTapTile : MonoBehaviour
 
     void Start()
     {
-        colider = this.GetComponent<Collider2D>();
+        colliderBox = this.GetComponent<BoxCollider2D>();
+        colliderTap = this.GetComponent<CircleCollider2D>();
         ChangeSprite(noneSprite);
-        colider.enabled = false;
+        colliderBox.enabled = false;
+        colliderTap.enabled = false;
     }
 
     // Update is called once per frame
@@ -29,15 +32,27 @@ public class BoxTapTile : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            this.GetComponent<Collider2D>().enabled = true;
+            this.GetComponent<BoxCollider2D>().enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = boxSprite;
-            colider.enabled = true;
+            colliderBox.enabled = true;
         }
         else if (Input.GetKeyUp(KeyCode.B)) {
-            this.GetComponent<Collider2D>().enabled = false;
+            this.GetComponent<BoxCollider2D>().enabled = false;
             this.GetComponent<SpriteRenderer>().sprite = noneSprite;
-            colider.enabled = false;
+            colliderBox.enabled = false;
         }
-        
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            this.GetComponent<CircleCollider2D>().enabled = true;
+            this.GetComponent<SpriteRenderer>().sprite = tapSprite;
+            colliderTap.enabled = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.B))
+        {
+            this.GetComponent<CircleCollider2D>().enabled = false;
+            this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+            colliderTap.enabled = false;
+        }
+
     }
 }
