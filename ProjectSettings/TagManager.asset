@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ScoreBoard
   - Canvas
+  - LavaOrb
+  - Cat
+  - LavaWave
   layers:
   - Default
   - TransparentFX
