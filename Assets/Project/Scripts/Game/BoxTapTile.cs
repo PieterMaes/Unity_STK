@@ -41,13 +41,14 @@ public class BoxTapTile : MonoBehaviour
             this.GetComponent<SpriteRenderer>().sprite = noneSprite;
             colliderBox.enabled = false;
         }
-        else if (Input.GetKeyDown(KeyCode.T))
+        
+        if (Input.GetKeyDown(KeyCode.T))
         {
             this.GetComponent<CircleCollider2D>().enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = tapSprite;
             colliderTap.enabled = true;
         }
-        else if (Input.GetKeyUp(KeyCode.B))
+        else if (Input.GetKeyUp(KeyCode.T))
         {
             this.GetComponent<CircleCollider2D>().enabled = false;
             this.GetComponent<SpriteRenderer>().sprite = noneSprite;

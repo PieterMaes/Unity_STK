@@ -27,7 +27,7 @@ public class CollisionKiller : MonoBehaviour
             if (collision.collider.GetType() == typeof(BoxCollider2D))
             {
                 //add the wanted points of this prefab tp score, located in scoretext script
-                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score -= 2*value_cats;
+                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score -= 2* value_cats;
                 //kill object
                 Destroy(collision.gameObject);
             }
