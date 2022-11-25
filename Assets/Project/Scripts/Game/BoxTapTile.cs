@@ -5,33 +5,38 @@ using UnityEngine;
 public class BoxTapTile : MonoBehaviour
 {
     public bool enabled;
-    public SpriteRenderer spriteRenderer;
     public Sprite noneSprite;
     public Sprite boxSprite;
     public Sprite tapSprite;
+    private Collider2D colider;
 
     // Start is called before the first frame update
 
     void ChangeSprite(Sprite sp)
     {
-        spriteRenderer.sprite = sp;
+        this.GetComponent<SpriteRenderer>().sprite = sp;
     }
 
     void Start()
     {
+        colider = this.GetComponent<Collider2D>();
         ChangeSprite(noneSprite);
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        //this.GetComponent<Collider2D>().enabled = false;
+        colider.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            //this.GetComponent<Collider2D>().enabled = true;
-            ChangeSprite(tapSprite);
-            enabled = true;
+            this.GetComponent<Collider2D>().enabled = true;
+            this.GetComponent<SpriteRenderer>().sprite = boxSprite;
+            colider.enabled = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.B)) {
+            this.GetComponent<Collider2D>().enabled = false;
+            this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+            colider.enabled = false;
         }
         
     }
