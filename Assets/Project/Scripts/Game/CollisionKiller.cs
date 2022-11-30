@@ -12,6 +12,7 @@ public class CollisionKiller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if(collision.gameObject.tag == "LavaOrb")
         {
             SceneManager.LoadScene("Death");
@@ -40,6 +41,7 @@ public class CollisionKiller : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        */
         //Tagging objects
     }
 }
