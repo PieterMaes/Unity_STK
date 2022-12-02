@@ -1655,6 +1655,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4335188806165750871, guid: 9f2fb69e3f8afc34293458e0dbb88f0c, type: 3}
   m_PrefabInstance: {fileID: 500288174}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &513504397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1724,6 +1725,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce6f6914e10d7d547a665a12ec9f0a4f, type: 3}
+=======
+>>>>>>> parent of 5460960 (Fader&HRshit)
 --- !u!1001 &535945111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2067,7 +2070,6 @@ MonoBehaviour:
   buttonHard: 8
   buttonSoft: 9
   testCircle: {fileID: 581912125}
-  hyperateS: {fileID: 1599874981}
 --- !u!212 &581912127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2286,7 +2288,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
   regression_rate: 0
   timeUntilSpawnRateIncrease: 0
-  hyperateObj: {fileID: 1599874981}
 --- !u!4 &651470427
 Transform:
   m_ObjectHideFlags: 0
@@ -3183,7 +3184,10 @@ MonoBehaviour:
   - {fileID: 2771545185485178975, guid: e5721f0ef94ec7a42822da2bcabcb909, type: 3}
   regression_rate: 0
   timeUntilSpawnRateIncrease: 0
+<<<<<<< HEAD
   hyperateObj: {fileID: 1599874981}
+=======
+>>>>>>> parent of 5460960 (Fader&HRshit)
 --- !u!4 &945865391
 Transform:
   m_ObjectHideFlags: 0
@@ -4757,7 +4761,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   websocketToken: ZThVSJJQgybeAULx5fJYrCcOAYaiVVpqzpbFK8KTvAMgSNzpU870dD1svARlsdaK
   hyperateID: 41F3
-  hr: 71
 --- !u!114 &1599874982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4861,11 +4864,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4335188806165750871, guid: 9f2fb69e3f8afc34293458e0dbb88f0c, type: 3}
   m_PrefabInstance: {fileID: 1608580693}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1629782371 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5537923958677653871, guid: ce6f6914e10d7d547a665a12ec9f0a4f, type: 3}
-  m_PrefabInstance: {fileID: 513504397}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1637199621
 PrefabInstance:
