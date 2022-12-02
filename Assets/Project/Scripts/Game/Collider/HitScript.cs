@@ -24,7 +24,6 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
-        OnCollisionEnter2D(collision);
     }
 
     public void hitSoft()
@@ -33,7 +32,6 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = tapSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = false;
-        OnCollisionEnter2D(collision);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
