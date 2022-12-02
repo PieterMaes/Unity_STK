@@ -40,27 +40,28 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     private void Spawn()
     {
+        ScoreText st = GameObject.Find("ScoreText").transform.GetComponent<ScoreText>();
 
-        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 50)
+        if (st.GetScore() == 50)
         {
             this.interval -= 2;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
         }
 
-        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 150)
+        else if (st.GetScore() == 150)
         {
             this.interval -= (float)1.5;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
         }
-        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 300)
+        else if (st.GetScore() == 300)
         {
             this.interval *= (float)0.85;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
         }
-        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 500)
+        else if (st.GetScore() == 500)
         {
             this.interval *= (float)0.9;
             CancelInvoke();

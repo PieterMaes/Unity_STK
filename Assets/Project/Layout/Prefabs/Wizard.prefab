@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5580859001960402582}
   - component: {fileID: 2777217189889465654}
   - component: {fileID: 7308573241742805418}
-  - component: {fileID: -6492131478109868898}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -106,15 +105,3 @@ MonoBehaviour:
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
---- !u!114 &-6492131478109868898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5056578146653582590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fd59a8625de234c9f9a111e9bedee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -53,11 +53,11 @@ public class HitScript : MonoBehaviour
             //add the wanted points of this prefab tp score, located in scoretext script
             if (hardhit == true)
             {   
-                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score -= subtract_points;
+                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(-subtract_points);
             }
             else
             {
-                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score += add_points;
+                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(add_points);
             }
             //kill object
             Destroy(collision.gameObject);

@@ -28,7 +28,7 @@ public class ClickFunction : MonoBehaviour
         if (!harmful)
         {
             //add the wanted points of this prefab tp score, located in scoretext script
-            GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score += add_points;
+            GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(add_points);
             if (destroy == true)
             { 
                 //kill object
