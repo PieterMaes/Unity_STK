@@ -45,7 +45,7 @@ void Start()
             {
                 AB1.GetComponent<HitScript>().hitTile(hardTrue);
             }
-            if (inputString == "AC1S"|| inputString == "AC1S")
+            if (inputString == "AC1S"|| inputString == "AC1H")
             {
                 AC1.GetComponent<HitScript>().hitTile(hardTrue);
             }

@@ -59,8 +59,6 @@ public sealed class Skweezee
 
     public static Skweezee Instance { get; } = new Skweezee();
 
-
-
     /*  
      *  InitVariables : Initialize the measurement arrays
      */
@@ -69,8 +67,6 @@ public sealed class Skweezee
         measurement = new int[MEASUREMENT_DIMENSION];
         dimension = MEASUREMENT_DIMENSION;
     }
-
-
 
     /*
      *  ConnectUSB : Establish the USB connection without giving a prefered port
@@ -144,7 +140,6 @@ public sealed class Skweezee
         }
     }
 
-
     /*
      *  GetValidPorts : Return a string array of valid and connected usb ports on the device 
      */
@@ -176,7 +171,6 @@ public sealed class Skweezee
         }
         return ports;
     }
-
 
     /*
      *   Disconnect : Close the current USB connection if currently active
@@ -266,9 +260,6 @@ public sealed class Skweezee
             }
         }
     }
-
-
-
 
     /*
      *  Vectorize : parse the data and store in the correct global vectors 
