@@ -7,17 +7,6 @@ public class ScoreText : MonoBehaviour
 {
     private int score;
 
-    // public int Score{
-    //     get { return score; }
-    //     set
-    //     {
-    //         //when called by prefabs of cats etc., sets value of score to value+score 
-    //         score = value;
-    //         this.GetComponent<Text>().text = "Score: " + score ;
-    //     }
-    //
-    // }
-
     // Start is called before the first frame update
     void Start()
     {

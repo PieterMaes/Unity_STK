@@ -68,6 +68,8 @@ public sealed class Skweezee
         dimension = MEASUREMENT_DIMENSION;
     }
 
+
+
     /*
      *  ConnectUSB : Establish the USB connection without giving a prefered port
      */
@@ -140,6 +142,7 @@ public sealed class Skweezee
         }
     }
 
+
     /*
      *  GetValidPorts : Return a string array of valid and connected usb ports on the device 
      */
@@ -171,6 +174,7 @@ public sealed class Skweezee
         }
         return ports;
     }
+
 
     /*
      *   Disconnect : Close the current USB connection if currently active
@@ -260,6 +264,9 @@ public sealed class Skweezee
             }
         }
     }
+
+
+
 
     /*
      *  Vectorize : parse the data and store in the correct global vectors 

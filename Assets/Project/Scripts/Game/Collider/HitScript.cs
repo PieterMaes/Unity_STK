@@ -38,6 +38,7 @@ public class HitScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "LavaOrb")
         {
+            Debug.Log("LavaOrb punched");
             SceneManager.LoadScene("Death");
         }
 

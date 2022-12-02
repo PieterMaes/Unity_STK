@@ -18,6 +18,12 @@ public class ClickFunction : MonoBehaviour
     [Header("Destroy object after click?")]
     public bool destroy;
 
+    private GameObject textBox;
+
+    void Start() {
+        textBox = GameObject.Find("ScoreText");
+    }
+
     public void OnMouseDown()
     {
         //when object clicked, set speed to 0
@@ -28,7 +34,7 @@ public class ClickFunction : MonoBehaviour
         if (!harmful)
         {
             //add the wanted points of this prefab tp score, located in scoretext script
-            GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(add_points);
+            textBox.transform.GetComponent<ScoreText>().SetScore(add_points);
             if (destroy == true)
             { 
                 //kill object

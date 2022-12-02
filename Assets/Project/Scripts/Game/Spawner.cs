@@ -26,6 +26,8 @@ public class Spawner : MonoBehaviour
         [SerializeField]
         private hyperateSocket hyperateObj;
 
+    public GameObject stext;
+
     void updateInterval(float newInterval) {
         interval = newInterval;
     }
@@ -33,15 +35,14 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        stext = GameObject.Find("ScoreText");
         InvokeRepeating("Spawn", interval, interval);
        // Debug.Log(hyperateObj.hr);
     }
-    
-    // Update is called once per frame
+
     private void Spawn()
     {
-        ScoreText st = GameObject.Find("ScoreText").transform.GetComponent<ScoreText>();
-
+        ScoreText st = stext.transform.GetComponent<ScoreText>();
         if (st.GetScore() == 50)
         {
             this.interval -= 2;
