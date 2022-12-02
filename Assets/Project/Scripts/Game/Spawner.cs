@@ -22,14 +22,19 @@ public class Spawner : MonoBehaviour
     [Header("Interval at which spawn rate increases")]
         public float timeUntilSpawnRateIncrease;
 
+    [Header("HR updater")]
+        [SerializeField]
+        private hyperateSocket hyperateObj;
+
+    void updateInterval(float newInterval) {
+        interval = newInterval;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Spawn", interval, interval);
-<<<<<<< HEAD
        // Debug.Log(hyperateObj.hr);
-=======
->>>>>>> parent of 5460960 (Fader&HRshit)
     }
     
     // Update is called once per frame
