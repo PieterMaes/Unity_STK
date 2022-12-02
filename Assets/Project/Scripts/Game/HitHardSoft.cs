@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class HitHardSoft : MonoBehaviour
 {
-
     public int buttonHard = 8; //hit hard
     public int buttonSoft = 9;
 

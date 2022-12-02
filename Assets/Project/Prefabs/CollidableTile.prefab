@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4335188806165750871}
   - component: {fileID: 4335188806165750872}
   - component: {fileID: 4335188806165750874}
+  - component: {fileID: 988121576344433418}
   m_Layer: 5
   m_Name: CollidableTile
   m_TagString: Untagged
@@ -111,3 +112,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &988121576344433418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335188806165750870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7755d1cbf3556449568283b86aca30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxSprite: {fileID: 21300000, guid: 230a10080867fe346a604b4ea6acecf7, type: 3}
+  tapSprite: {fileID: 21300000, guid: 65930a1277d04bf4a90b8666577441af, type: 3}
+  subtract_points: 5
+  add_points: 10

@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", interval, interval);
-        Debug.Log(hyperateObj.hr);
+       // Debug.Log(hyperateObj.hr);
     }
     
     // Update is called once per frame
