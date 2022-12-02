@@ -27,51 +27,49 @@ public class Spawner : MonoBehaviour
     {
         InvokeRepeating("Spawn", interval, interval);
     }
-
-    private void Update()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     private void Spawn()
     {
 
         if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 50)
         {
-            this.interval -= (float)2;
+            this.interval -= 2;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
-        };
-        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 150)
+        }
+
+        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 150)
         {
             this.interval -= (float)1.5;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
-        };
-        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 300)
+        }
+        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 300)
         {
             this.interval *= (float)0.85;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
-        };
-        if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 500)
+        }
+        else if (GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score == 500)
         {
             this.interval *= (float)0.9;
             CancelInvoke();
             InvokeRepeating("Spawn", interval, interval);
-        };
+        }
 
         //add object instance at coordinates set
+        float random = Random.Range(minX, maxX);
+        
         GameObject instance = Instantiate(prefab);
         instance.transform.position = new Vector2(
-            Random.Range(minX, maxX), y
+            random, y
             );
         instance.transform.SetParent(transform);
 
         //change srpite of object
-        Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
-        instance.GetComponent<SpriteRenderer>().sprite = randomSprite;
+/*        Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
+        instance.GetComponent<SpriteRenderer>().sprite = randomSprite;*/
     }
 
 }

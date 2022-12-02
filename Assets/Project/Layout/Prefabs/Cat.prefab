@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5996278078047971071}
   - component: {fileID: 5996278078047971064}
   - component: {fileID: 5996278078047971067}
+  - component: {fileID: 2053843471950543710}
   - component: {fileID: -2675189588074618248}
-  - component: {fileID: 5378843476574942173}
   m_Layer: 6
   m_Name: Cat
   m_TagString: Cat
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5996278078047971068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.29, y: -0.64, z: 0}
-  m_LocalScale: {x: 1.4879818, y: 1.4879818, z: 1.4879818}
+  m_LocalScale: {x: 1.4879818, y: 1.4879818, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -1571779289
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0393d232c69301b468769b90b686ae3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,14 +120,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1.83, y: 1.1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -153,6 +153,19 @@ MonoBehaviour:
   min_YSpeed: -3
   max_YSpeed: -10
   lifetime: 3
+--- !u!114 &2053843471950543710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996278078047971068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e637c1b962e614e8be0fdf002ab280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireCat: {fileID: 2633018495083545456, guid: 9b4b39b7e29e0154baab7631a5f9f8b3, type: 3}
 --- !u!114 &-2675189588074618248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,15 +183,3 @@ MonoBehaviour:
   newY_Speed: 0
   add_points: 5
   destroy: 1
---- !u!114 &5378843476574942173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5996278078047971068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345d1dd1ce70b5648a2bc798c7eed668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
