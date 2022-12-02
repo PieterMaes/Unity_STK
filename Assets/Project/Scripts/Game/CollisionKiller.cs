@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class CollisionKiller : MonoBehaviour
 {
     [Header("AddPoints")]
-    public int value_cats; 
+    public int value_cats;
+
+    private bool hard;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        /*
         if(collision.gameObject.tag == "LavaOrb")
         {
             SceneManager.LoadScene("Death");
@@ -24,21 +27,21 @@ public class CollisionKiller : MonoBehaviour
 
         if (collision.gameObject.tag == "Cat")
         {
-            if (collision.collider.GetType() == typeof(BoxCollider2D))
+            if (this.GetComponent<BoxTapTile>().getHard == true)
             {
                 //add the wanted points of this prefab tp score, located in scoretext script
-                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score -= 2*value_cats;
+                GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score -= value_cats*2;
                 //kill object
                 Destroy(collision.gameObject);
             }
-            if (collision.collider.GetType() == typeof(CircleCollider2D))
-            {
+            if (this.GetComponent<BoxTapTile>().getSoft == true){
                 //add the wanted points of this prefab tp score, located in scoretext script
                 GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().Score += value_cats;
                 //kill object
                 Destroy(collision.gameObject);
             }
         }
+        */
         //Tagging objects
     }
 }

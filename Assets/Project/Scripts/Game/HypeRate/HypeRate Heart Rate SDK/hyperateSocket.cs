@@ -12,15 +12,10 @@ public class hyperateSocket : MonoBehaviour
     public string websocketToken = "ZThVSJJQgybeAULx5fJYrCcOAYaiVVpqzpbFK8KTvAMgSNzpU870dD1svARlsdaK"; 
     public string hyperateID = "41F3";
     // Textbox to display your heart rate in, int to pass it as a variable
-    private int hr;
+    public float hr = 71f;
     Text textBox;
 	// Websocket for connection with Hyperate
     WebSocket websocket;
-
-    public int getHR
-    {
-        get { return hr; }
-    }
 
     async void Start()
     {
@@ -54,7 +49,7 @@ public class hyperateSocket : MonoBehaviour
             {
                 // Change textbox text into the newly received Heart Rate (integer like "86" which represents beats per minute)
                 textBox.text = (string) msg["payload"]["hr"];
-                hr = Int16.Parse(message);
+                //hr = float.Parse(msg["hr"]);
             }
         };
 

@@ -12,6 +12,10 @@ public class HitHardSoft : MonoBehaviour
 
     public GameObject testCircle;
 
+    [Header("HR updater")]
+    [SerializeField]
+    private hyperateSocket hyperateS;
+
     int buttonValueHard = 0;
     //int prevButtonValueHard = 0;
 
@@ -45,11 +49,15 @@ public class HitHardSoft : MonoBehaviour
             testCircle.GetComponent<Renderer>().material.color = Color.white;
         }
         
-        if (GameObject.Find("HR").transform.GetComponent<hyperateSocket>().getHR < 70)
+        if (hyperateS.hr < 70)
         {
             testCircle.GetComponent<Renderer>().material.color = Color.blue;
         }
-        
+        if (hyperateS.hr >= 70)
+        {
+            testCircle.GetComponent<Renderer>().material.color = Color.green;
+        }
+
     }
     /*
     void PressedDown()

@@ -5,11 +5,14 @@ using UnityEngine;
 public class BoxTapTile : MonoBehaviour
 {
     public bool enabled;
+    public bool hard;
+    public bool soft;
+
     public Sprite noneSprite;
     public Sprite boxSprite;
     public Sprite tapSprite;
-    private Collider2D colliderBox;
-    private Collider2D colliderTap;
+    private BoxCollider2D colliderBox;
+    private CircleCollider2D colliderTap;
 
     // Start is called before the first frame update
 
@@ -30,29 +33,46 @@ public class BoxTapTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        this.GetComponent<CircleCollider2D>().enabled = false;
+
         if (Input.GetKeyDown(KeyCode.B))
         {
-            this.GetComponent<BoxCollider2D>().enabled = true;
             this.GetComponent<SpriteRenderer>().sprite = boxSprite;
+            this.GetComponent<BoxCollider2D>().enabled = true;
+            hard = true;
             colliderBox.enabled = true;
         }
         else if (Input.GetKeyUp(KeyCode.B)) {
-            this.GetComponent<BoxCollider2D>().enabled = false;
             this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            hard = false;
             colliderBox.enabled = false;
         }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            this.GetComponent<CircleCollider2D>().enabled = true;
-            this.GetComponent<SpriteRenderer>().sprite = tapSprite;
-            colliderTap.enabled = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.B))
-        {
-            this.GetComponent<CircleCollider2D>().enabled = false;
-            this.GetComponent<SpriteRenderer>().sprite = noneSprite;
-            colliderTap.enabled = false;
-        }
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            this.GetComponent<SpriteRenderer>().sprite = tapSprite;
+            this.GetComponent<BoxCollider2D>().enabled = true;
+            soft = true;
+            colliderBox.enabled = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.T))
+        {
+            this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            soft = false;
+            colliderBox.enabled = false;
+        }
+    }
+
+    public bool getHard()
+    {
+        return hard;
+    }
+
+    public bool getSoft()
+    {
+        return soft;
     }
 }

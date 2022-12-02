@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 4335188806165750871}
   - component: {fileID: 4335188806165750872}
   - component: {fileID: 4335188806165750874}
-  - component: {fileID: 4335188806165750873}
-  - component: {fileID: 4335188806165750875}
-  - component: {fileID: 6295401711573579884}
   m_Layer: 5
   m_Name: CollidableTile
   m_TagString: Untagged
@@ -114,48 +111,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4335188806165750873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335188806165750870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3756543cb26b9241b1e9c62bb43f8f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enabled: 0
-  noneSprite: {fileID: 0}
-  boxSprite: {fileID: 21300000, guid: 230a10080867fe346a604b4ea6acecf7, type: 3}
-  tapSprite: {fileID: 21300000, guid: 65930a1277d04bf4a90b8666577441af, type: 3}
---- !u!114 &4335188806165750875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335188806165750870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345d1dd1ce70b5648a2bc798c7eed668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value_cats: 5
---- !u!58 &6295401711573579884
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4335188806165750870}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5

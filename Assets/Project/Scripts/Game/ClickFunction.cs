@@ -18,7 +18,7 @@ public class ClickFunction : MonoBehaviour
     [Header("Destroy object after click?")]
     public bool destroy;
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         //when object clicked, set speed to 0
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
