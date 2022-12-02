@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc19b651bfc3ba47ac28847d01061c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreObj: {fileID: 0}
 --- !u!1001 &244807159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3145,6 +3146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc19b651bfc3ba47ac28847d01061c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreObj: {fileID: 895861772}
 --- !u!1 &945865389
 GameObject:
   m_ObjectHideFlags: 0
