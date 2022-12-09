@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO.Ports;
 using UnityEngine;
 
 public class InputController : MonoBehaviour
@@ -12,19 +14,20 @@ public class InputController : MonoBehaviour
     public string inputString;
     public int readPin;
     bool hardTrue = true;
-// Start is called before the first frame update
-void Start()
+    SerialPort sp;
+    float next_time;
+    // Start is called before the first frame update
+
+    void Start()
     {
-//        UduinoManager.Instance.pinMode(readPin, PinMode.Input);
+        string the_com = "COM3";
+        sp = new SerialPort("\\\\.\\" + the_com, 9600);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //  inputString = UduinoManager.Instance.analogRead(readPin, inputString);
-        inputString = "AC1H";
+    void checkTiles(string inputStr) {
 
-        if (inputString[3] == char.Parse("S")) {
+        if (inputString[3] == char.Parse("S"))
+        {
             hardTrue = false;
         }
         if (inputString[3] == char.Parse("H"))
@@ -32,8 +35,8 @@ void Start()
             hardTrue = true;
         }
 
-        char kwadrant = inputString[2];
-        if (kwadrant == char.Parse("1")) 
+        char kwadrant = inputStr[2];
+        if (kwadrant == char.Parse("1"))
         {
 
             if (inputString == "AA1S" || inputString == "AA1H")
@@ -44,10 +47,50 @@ void Start()
             {
                 AB1.GetComponent<HitScript>().hitTile(hardTrue);
             }
-            if (inputString == "AC1S"|| inputString == "AC1H")
+            if (inputString == "AC1S" || inputString == "AC1H")
             {
                 AC1.GetComponent<HitScript>().hitTile(hardTrue);
             }
         }
+    }
+
+    string ReceiveStr()
+    {
+        string message = "";
+        try
+        {
+            if (sp.BytesToRead > 0)
+            {
+                message = sp.ReadLine();
+                inputString = message;
+            }
+
+        }
+        catch (Exception e)
+        {
+            // swallow read timeout exceptions
+            if (e.GetType() == typeof(TimeoutException))
+                return message;
+            else
+                throw;
+        }
+        return message;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!sp.IsOpen){
+            sp.Open();
+            print("opened sp");
+        }
+
+        if (sp.IsOpen)
+        {
+            ReceiveStr();
+        }
+
+        inputString = "AC1H";
+        checkTiles(inputString);
     }
 }
