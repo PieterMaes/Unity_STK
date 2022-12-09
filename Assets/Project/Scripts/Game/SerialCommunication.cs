@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 using System.IO.Ports;
 
 public class SerialCommunication : MonoBehaviour
 {
     
     SerialPort sp;
-    float next_time; int ii = 0;
+    float next_time; 
     // Use this for initialization
     void Start()
     {
@@ -26,25 +25,27 @@ public class SerialCommunication : MonoBehaviour
 
         if (sp.IsOpen)
         {
-            string message = "";
-            try
-            {
-                if (sp.BytesToRead > 0)
-                {
-                    message = port.ReadLine();
-                }
-
-            }
-            catch (Exception e)
-            {
-                // swallow read timeout exceptions
-                if (e.GetType() == typeof(TimeoutException))
-                    return message;
-                else
-                    throw;
-            }
-            return message;
+            ReceiveStr();
         }
     }
-    
+  string ReceiveStr() {
+        string message = "";
+        try
+        {
+            if (sp.BytesToRead > 0)
+            {
+                message = sp.ReadLine();
+            }
+
+        }
+        catch (Exception e)
+        {
+            // swallow read timeout exceptions
+            if (e.GetType() == typeof(TimeoutException))
+                return message;
+            else
+                throw;
+        }
+        return message;
+    }  
 }
