@@ -11,7 +11,7 @@ public class SerialCommunication : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        string the_com = "COM5";
+        string the_com = "COM3";
         sp = new SerialPort("\\\\.\\" + the_com, 9600);
     }
 

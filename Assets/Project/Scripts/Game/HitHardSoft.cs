@@ -24,14 +24,14 @@ public class HitHardSoft : MonoBehaviour
     {
         //UduinoManager.Instance.pinMode(buttonHard, PinMode.Input_pullup);
         //UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input_pullup);
-        UduinoManager.Instance.pinMode(buttonHard, PinMode.Input);
-        UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input);
+        //UduinoManager.Instance.pinMode(buttonHard, PinMode.Input);
+        //UduinoManager.Instance.pinMode(buttonSoft, PinMode.Input);
     }
 
     void Update()
     {
-        buttonValueHard = UduinoManager.Instance.digitalRead(buttonHard);
-        buttonValueSoft = UduinoManager.Instance.digitalRead(buttonSoft);
+        //buttonValueHard = UduinoManager.Instance.digitalRead(buttonHard);
+        //buttonValueSoft = UduinoManager.Instance.digitalRead(buttonSoft);
 
         // In this case, we compare the current button value to the previous button value, 
         // to trigger the change only once the value change.

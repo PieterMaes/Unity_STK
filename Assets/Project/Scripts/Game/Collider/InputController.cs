@@ -15,7 +15,7 @@ public class InputController : MonoBehaviour
 // Start is called before the first frame update
 void Start()
     {
-        UduinoManager.Instance.pinMode(readPin, PinMode.Input);
+//        UduinoManager.Instance.pinMode(readPin, PinMode.Input);
     }
 
     // Update is called once per frame
