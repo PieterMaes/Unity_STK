@@ -6,12 +6,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    public GameObject AA1;
-    public GameObject AB1;
-    public GameObject AC1;
-    public GameObject AD1;
-
     public string inputString;
+    public GameObject tile;
     public int readPin;
     bool hardTrue = true;
     SerialPort sp;
@@ -20,11 +16,11 @@ public class InputController : MonoBehaviour
 
     void Start()
     {
-        string the_com = "COM3";
-        sp = new SerialPort("\\\\.\\" + the_com, 9600);
+        string the_com = "COM5";
+        sp = new SerialPort(the_com, 9600);
     }
 
-    void checkTiles(string inputStr) {
+    void CheckTiles() {
 
         if (inputString[3] == char.Parse("S"))
         {
@@ -34,25 +30,13 @@ public class InputController : MonoBehaviour
         {
             hardTrue = true;
         }
+      
+        string substr = inputString.Substring(0, 3);
+        //Debug.Log(substr);
 
-        char kwadrant = inputStr[2];
-        if (kwadrant == char.Parse("1"))
-        {
-
-            if (inputString == "AA1S" || inputString == "AA1H")
-            {
-                AA1.GetComponent<HitScript>().hitTile(hardTrue);
-            }
-            if (inputString == "AB1S" || inputString == "AB1H")
-            {
-                AB1.GetComponent<HitScript>().hitTile(hardTrue);
-            }
-            if (inputString == "AC1S" || inputString == "AC1H")
-            {
-                AC1.GetComponent<HitScript>().hitTile(hardTrue);
-            }
-        }
-    }
+        tile = GameObject.Find(substr);
+        tile.GetComponent<HitScript>().hitTile(hardTrue);
+    }   
 
     string ReceiveStr()
     {
@@ -62,7 +46,8 @@ public class InputController : MonoBehaviour
             if (sp.BytesToRead > 0)
             {
                 message = sp.ReadLine();
-                inputString = message;
+                inputString = "AE3H";
+                Debug.Log(message);
             }
 
         }
@@ -88,9 +73,7 @@ public class InputController : MonoBehaviour
         if (sp.IsOpen)
         {
             ReceiveStr();
+            CheckTiles();
         }
-
-        inputString = "AC1H";
-        checkTiles(inputString);
     }
 }

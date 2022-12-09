@@ -2,19 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class HitScript : MonoBehaviour
 {
     public Sprite boxSprite;
     public Sprite tapSprite;
+    public Sprite noneSprite;
     public int subtract_points = 5;
     public int add_points = 10;
     public Collision2D collision;
     bool hardhit;
+    //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
 
     public void hitTile(bool hard) {
         if (hard == false) { hitSoft(); }
         else { hitHard(); }
+    }
+
+    public async Task waitMethod()
+    {
+        await Task.Run(async () =>
+        {
+            Debug.Log("Start");
+            await Task.Delay(5000);
+            Debug.Log("Done");
+        });
+        Debug.Log("All done");
+
+        this.GetComponent<SpriteRenderer>().sprite = tapSprite;
     }
 
     public void hitHard()
@@ -23,6 +40,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
+        waitMethod();
     }
 
     public void hitSoft()
