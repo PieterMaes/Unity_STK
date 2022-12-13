@@ -16,7 +16,7 @@ public class InputController : MonoBehaviour
 
     void Start()
     {
-        string the_com = "COM5";
+        string the_com = "COM3";
         sp = new SerialPort(the_com, 9600);
     }
 
@@ -30,13 +30,13 @@ public class InputController : MonoBehaviour
         {
             hardTrue = true;
         }
-      
+
         string substr = inputString.Substring(0, 3);
         //Debug.Log(substr);
 
         tile = GameObject.Find(substr);
         tile.GetComponent<HitScript>().hitTile(hardTrue);
-    }   
+    }
 
     string ReceiveStr()
     {
@@ -46,7 +46,8 @@ public class InputController : MonoBehaviour
             if (sp.BytesToRead > 0)
             {
                 message = sp.ReadLine();
-                inputString = "AE3H";
+                CheckTiles();
+                //inputString = "AE3H";
                 Debug.Log(message);
             }
 
@@ -61,7 +62,23 @@ public class InputController : MonoBehaviour
         }
         return message;
     }
-
+    void tryCatch(string message) {
+        try
+        {
+            if (sp.BytesToRead > 0)
+            {
+                message = sp.ReadLine();
+                inputString = message;
+                CheckTiles();
+                Debug.Log(message);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(message);
+            return;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -72,8 +89,8 @@ public class InputController : MonoBehaviour
 
         if (sp.IsOpen)
         {
-            ReceiveStr();
-            CheckTiles();
+            string message = "";
+            tryCatch(message);
         }
     }
 }

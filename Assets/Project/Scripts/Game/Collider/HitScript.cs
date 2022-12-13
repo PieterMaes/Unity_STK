@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading;
-using System.Threading.Tasks;
 
 public class HitScript : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class HitScript : MonoBehaviour
         if (hard == false) { hitSoft(); }
         else { hitHard(); }
     }
-
+    /*
     public async Task waitMethod()
     {
         await Task.Run(async () =>
@@ -33,14 +31,14 @@ public class HitScript : MonoBehaviour
 
         this.GetComponent<SpriteRenderer>().sprite = tapSprite;
     }
-
+    */
     public void hitHard()
     {
         //render the sprite to a tap of the collider and enable the box collider
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
-        waitMethod();
+        //waitMethod();
     }
 
     public void hitSoft()
