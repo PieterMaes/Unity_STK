@@ -10,14 +10,17 @@ public class InputController : MonoBehaviour
     public GameObject tile;
     public int readPin;
     bool hardTrue = true;
-    SerialPort sp;
+    SerialPort sp1;
+    SerialPort sp2;
     float next_time;
     // Start is called before the first frame update
 
     void Start()
     {
-        string the_com = "COM3";
-        sp = new SerialPort(the_com, 9600);
+        string the_com1 = "COM4";
+        string the_com2 = "COM6";
+        sp1 = new SerialPort(the_com1, 9600);
+        sp2 = new SerialPort(the_com2, 9600);
     }
 
     void CheckTiles() {
@@ -40,17 +43,33 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!sp.IsOpen){
-            sp.Open();
+        if (!sp1.IsOpen){
+            sp1.Open();
             print("opened sp");
         }
-
-        if (sp.IsOpen)
+        if (!sp2.IsOpen)
+        {
+            sp2.Open();
+            print("opened sp");
+        }
+        if (sp1.IsOpen)
         {
             string message = "";
-            if (sp.BytesToRead > 0)
+            if (sp1.BytesToRead > 0)
             {
-                message = sp.ReadLine();
+                message = sp1.ReadLine();
+                inputString = message;
+                CheckTiles();
+                Debug.Log(message);
+            }
+        }
+
+        if (sp2.IsOpen)
+        {
+            string message = "";
+            if (sp2.BytesToRead > 0)
+            {
+                message = sp2.ReadLine();
                 inputString = message;
                 CheckTiles();
                 Debug.Log(message);
