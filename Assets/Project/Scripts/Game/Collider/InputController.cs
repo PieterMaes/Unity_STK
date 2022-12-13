@@ -32,53 +32,11 @@ public class InputController : MonoBehaviour
         }
 
         string substr = inputString.Substring(0, 3);
-        //Debug.Log(substr);
 
         tile = GameObject.Find(substr);
         tile.GetComponent<HitScript>().hitTile(hardTrue);
     }
 
-    string ReceiveStr()
-    {
-        string message = "";
-        try
-        {
-            if (sp.BytesToRead > 0)
-            {
-                message = sp.ReadLine();
-                CheckTiles();
-                //inputString = "AE3H";
-                Debug.Log(message);
-            }
-
-        }
-        catch (Exception e)
-        {
-            // swallow read timeout exceptions
-            if (e.GetType() == typeof(TimeoutException))
-                return message;
-            else
-                throw;
-        }
-        return message;
-    }
-    void tryCatch(string message) {
-        try
-        {
-            if (sp.BytesToRead > 0)
-            {
-                message = sp.ReadLine();
-                inputString = message;
-                CheckTiles();
-                Debug.Log(message);
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log(message);
-            return;
-        }
-    }
     // Update is called once per frame
     void Update()
     {
@@ -90,7 +48,13 @@ public class InputController : MonoBehaviour
         if (sp.IsOpen)
         {
             string message = "";
-            tryCatch(message);
+            if (sp.BytesToRead > 0)
+            {
+                message = sp.ReadLine();
+                inputString = message;
+                CheckTiles();
+                Debug.Log(message);
+            }
         }
     }
 }

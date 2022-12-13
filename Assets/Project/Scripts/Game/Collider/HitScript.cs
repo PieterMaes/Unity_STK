@@ -15,30 +15,17 @@ public class HitScript : MonoBehaviour
     //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
 
     public void hitTile(bool hard) {
+
         if (hard == false) { hitSoft(); }
         else { hitHard(); }
     }
-    /*
-    public async Task waitMethod()
-    {
-        await Task.Run(async () =>
-        {
-            Debug.Log("Start");
-            await Task.Delay(5000);
-            Debug.Log("Done");
-        });
-        Debug.Log("All done");
 
-        this.GetComponent<SpriteRenderer>().sprite = tapSprite;
-    }
-    */
     public void hitHard()
     {
         //render the sprite to a tap of the collider and enable the box collider
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
-        //waitMethod();
     }
 
     public void hitSoft()
@@ -55,11 +42,6 @@ public class HitScript : MonoBehaviour
         {
             Debug.Log("LavaOrb punched");
             SceneManager.LoadScene("Death");
-        }
-
-        if (collision.gameObject.tag == "LavaWave")
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
 
         if (collision.gameObject.tag == "Cat")
