@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4559331947784605233}
   - component: {fileID: -1553074065172363836}
   - component: {fileID: -8533728114492718229}
+  - component: {fileID: 115158798789505798}
   m_Layer: 0
   m_Name: DeadWizard
   m_TagString: Untagged
@@ -105,3 +106,15 @@ MonoBehaviour:
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &115158798789505798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4702921319994244803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29d3fc31b7de8848ba61e490147f03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
