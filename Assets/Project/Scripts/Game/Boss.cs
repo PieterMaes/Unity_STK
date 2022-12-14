@@ -80,7 +80,6 @@ public class Boss : MonoBehaviour
             var nw = wizard.transform.position;
             Instantiate(deadWizard).transform.position = nw;
             Destroy(wizard);
-            Destroy(deadWizard);
             wizard = Instantiate(wizard);
             wizard.GetComponent<BoxCollider2D>().enabled = true;
             wizard.transform.position = new Vector2(0, 5);
