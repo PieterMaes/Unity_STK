@@ -10,14 +10,29 @@ public class InputController : MonoBehaviour
     public GameObject tile;
     public int readPin;
     bool hardTrue = true;
-    SerialPort sp;
+    SerialPort sp1;
+    SerialPort sp2;
     float next_time;
     // Start is called before the first frame update
 
     void Start()
     {
-        string the_com = "COM5";
-        sp = new SerialPort(the_com, 9600);
+        string the_com1 = "COM3";
+        //string the_com2 = "COM4";
+        sp2 = new SerialPort(the_com1, 9600);
+        //sp1 = new SerialPort(the_com2, 9600);
+        /*
+        if (!sp1.IsOpen)
+        {
+            sp1.Open();
+            print("opened sp1");
+        }
+        */
+        if (!sp2.IsOpen)
+        {
+            sp2.Open();
+            print("opened sp2");
+        }
     }
 
     void CheckTiles() {
@@ -38,42 +53,45 @@ public class InputController : MonoBehaviour
         tile.GetComponent<HitScript>().hitTile(hardTrue);
     }   
 
-    string ReceiveStr()
-    {
-        string message = "";
-        try
-        {
-            if (sp.BytesToRead > 0)
-            {
-                message = sp.ReadLine();
-                inputString = "AE3H";
-                Debug.Log(message);
-            }
-
-        }
-        catch (Exception e)
-        {
-            // swallow read timeout exceptions
-            if (e.GetType() == typeof(TimeoutException))
-                return message;
-            else
-                throw;
-        }
-        return message;
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        if (!sp.IsOpen){
-            sp.Open();
-            print("opened sp");
-        }
-
-        if (sp.IsOpen)
+        if (!sp2.IsOpen)
         {
-            ReceiveStr();
-            CheckTiles();
+            sp2.Open();
+            print("opened sp2");
         }
-    }
+        string message = "";
+        /*
+        if (sp1.BytesToRead > 0)
+        {
+            message = sp1.ReadLine();
+            inputString = message;
+            Debug.Log(message);
+        }*/
+        if (sp2.BytesToRead > 0)
+            {
+                message = sp2.ReadLine();
+                inputString = message;
+                Debug.Log(message);
+            }
+            /*
+            if (!sp1.IsOpen)
+            {
+                sp1.Open();
+                print("opened sp1");
+            }*/
+            
+
+            if (sp2.IsOpen)
+            {
+               CheckTiles();
+            }
+
+            }
+
+        
+    
 }

@@ -40,7 +40,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
-        waitMethod();
+       // waitMethod();
     }
 
     public void hitSoft()
