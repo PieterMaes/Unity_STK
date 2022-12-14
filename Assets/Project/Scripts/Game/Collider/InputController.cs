@@ -17,8 +17,8 @@ public class InputController : MonoBehaviour
 
     void Start()
     {
-        string the_com1 = "COM5";
-        string the_com2 = "COM6";
+        string the_com1 = "COM4";
+        string the_com2 = "COM7";
         sp1 = new SerialPort(the_com1, 9600);
         sp2 = new SerialPort(the_com2, 9600);
     }
@@ -43,8 +43,8 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        inputString = "AD1H";
-        CheckTiles();
+       // inputString = "AD1H";
+        //CheckTiles();
         if (!sp1.IsOpen){
             sp1.Open();
             print("opened sp");
