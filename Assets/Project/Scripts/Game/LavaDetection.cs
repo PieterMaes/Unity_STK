@@ -6,7 +6,6 @@ public class LavaDetection : MonoBehaviour
 {
     public GameObject fireCat;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("LavaOrb"))
@@ -19,5 +18,4 @@ public class LavaDetection : MonoBehaviour
             Destroy(death.gameObject, 1.0f);
         }
     }
-
 }

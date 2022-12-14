@@ -36,6 +36,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         stext = GameObject.Find("ScoreText");
+
         InvokeRepeating("Spawn", interval, interval);
        // Debug.Log(hyperateObj.hr);
     }
@@ -43,6 +44,9 @@ public class Spawner : MonoBehaviour
     private void Spawn()
     {
         ScoreText st = stext.transform.GetComponent<ScoreText>();
+        //float newHR = hyperateObj.GetHR();
+       // Debug.Log("New HR:", newHR);
+
         if (st.GetScore() == 50)
         {
             this.interval -= 2;

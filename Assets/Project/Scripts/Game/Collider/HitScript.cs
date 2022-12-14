@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading;
-using System.Threading.Tasks;
 
 public class HitScript : MonoBehaviour
 {
@@ -15,23 +13,14 @@ public class HitScript : MonoBehaviour
     public Collision2D collision;
     bool hardhit;
     //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
-
+    public void resetLayout()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+    }
     public void hitTile(bool hard) {
+
         if (hard == false) { hitSoft(); }
         else { hitHard(); }
-    }
-
-    public async Task waitMethod()
-    {
-        await Task.Run(async () =>
-        {
-            Debug.Log("Start");
-            await Task.Delay(5000);
-            Debug.Log("Done");
-        });
-        Debug.Log("All done");
-
-        this.GetComponent<SpriteRenderer>().sprite = tapSprite;
     }
 
     public void hitHard()
@@ -40,7 +29,11 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
+<<<<<<< HEAD
        // waitMethod();
+=======
+        Invoke("resetLayout", 1);//this will happen after 2 seconds
+>>>>>>> 3463da47e87f34191710db6d206890290ab12d40
     }
 
     public void hitSoft()
@@ -49,6 +42,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = tapSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = false;
+        Invoke("resetLayout", 1);//this will happen after 2 seconds
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -57,11 +51,6 @@ public class HitScript : MonoBehaviour
         {
             Debug.Log("LavaOrb punched");
             SceneManager.LoadScene("Death");
-        }
-
-        if (collision.gameObject.tag == "LavaWave")
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         }
 
         if (collision.gameObject.tag == "Cat")
