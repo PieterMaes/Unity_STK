@@ -72,5 +72,11 @@ public class HitScript : MonoBehaviour
             //kill object
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Wizard")
+        {
+            Debug.Log("Wizard punched");
+        }
+
     }
 }
