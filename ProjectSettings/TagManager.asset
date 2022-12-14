@@ -10,11 +10,12 @@ TagManager:
   - Cat
   - LavaWave
   - Collider
+  - Wizard
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wizard
   - Water
   - UI
   - Cats
