@@ -43,6 +43,8 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inputString = "AD1H";
+        CheckTiles();
         if (!sp1.IsOpen){
             sp1.Open();
             print("opened sp");
@@ -55,6 +57,7 @@ public class InputController : MonoBehaviour
         if (sp1.IsOpen)
         {
             string message = "";
+            
             if (sp1.BytesToRead > 0)
             {
                 message = sp1.ReadLine();
@@ -62,6 +65,7 @@ public class InputController : MonoBehaviour
                 CheckTiles();
                 Debug.Log(message);
             }
+            
         }
 
         if (sp2.IsOpen)

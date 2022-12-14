@@ -12,10 +12,17 @@ public class HitScript : MonoBehaviour
     public int add_points = 10;
    // public Collision2D collision;
     bool hardhit;
+
+    void Start()
+    {
+        this.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
     //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
     public void resetLayout()
     {
         this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+        this.GetComponent<BoxCollider2D>().enabled = false;
     }
     public void hitTile(bool hard) {
 
@@ -41,7 +48,7 @@ public class HitScript : MonoBehaviour
         Invoke("resetLayout", 1);//this will happen after 2 seconds
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "LavaOrb")
         {
@@ -49,6 +56,7 @@ public class HitScript : MonoBehaviour
             SceneManager.LoadScene("Death");
             Destroy(collision.gameObject);
         }
+        Debug.Log("In Triggermethod");
 
         if (collision.gameObject.tag == "Cat")
         {
