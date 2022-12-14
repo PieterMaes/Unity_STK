@@ -641,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CatSpawner '
       objectReference: {fileID: 0}
+    - target: {fileID: 4419700298836411667, guid: 86c080c42f3527c46a44e2e7d9634873, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c080c42f3527c46a44e2e7d9634873, type: 3}
 --- !u!4 &422701278 stripped
@@ -988,6 +992,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4335188806165750871, guid: 9f2fb69e3f8afc34293458e0dbb88f0c, type: 3}
   m_PrefabInstance: {fileID: 581037710}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &620263684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650709289569485152, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752539768267767167, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
+      propertyPath: m_Name
+      value: WizardSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7159ff7e163f3174d84fe9772fe94770, type: 3}
 --- !u!1 &651470425
 GameObject:
   m_ObjectHideFlags: 0
