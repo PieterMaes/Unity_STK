@@ -49,7 +49,7 @@ public class hyperateSocket : MonoBehaviour
             {
                 // Change textbox text into the newly received Heart Rate (integer like "86" which represents beats per minute)
                 textBox.text = (string) msg["payload"]["hr"];
-                //hr = float.Parse(msg["hr"]);
+               // hr = float.Parse(textBox.text);
             }
         };
 
@@ -59,7 +59,9 @@ public class hyperateSocket : MonoBehaviour
         // waiting for messages
         await websocket.Connect();
     }
-
+    public float GetHR() {
+        return hr;
+    }
     void Update()
     {
 #if !UNITY_WEBGL || UNITY_EDITOR
