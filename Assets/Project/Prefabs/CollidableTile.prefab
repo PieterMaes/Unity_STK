@@ -126,5 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxSprite: {fileID: 21300000, guid: 230a10080867fe346a604b4ea6acecf7, type: 3}
   tapSprite: {fileID: 21300000, guid: 65930a1277d04bf4a90b8666577441af, type: 3}
+  noneSprite: {fileID: 0}
   subtract_points: 5
   add_points: 10
