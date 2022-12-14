@@ -13,7 +13,10 @@ public class HitScript : MonoBehaviour
     public Collision2D collision;
     bool hardhit;
     //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
-
+    public void resetLayout()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = noneSprite;
+    }
     public void hitTile(bool hard) {
 
         if (hard == false) { hitSoft(); }
@@ -26,6 +29,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
+        Invoke("resetLayout", 1);//this will happen after 2 seconds
     }
 
     public void hitSoft()
@@ -34,6 +38,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = tapSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = false;
+        Invoke("resetLayout", 1);//this will happen after 2 seconds
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
