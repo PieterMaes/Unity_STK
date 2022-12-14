@@ -75,6 +75,9 @@ public class HitScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Wizard")
         {
+            collision.gameObject.GetComponent<Wizard1>().hitWizard();
+            var text = GameObject.Find("ScoreText");
+            text.transform.GetComponent<ScoreText>().SetScore(5);
             Debug.Log("Wizard punched");
         }
 

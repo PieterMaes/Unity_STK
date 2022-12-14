@@ -92,7 +92,7 @@ public class Boss : MonoBehaviour
             _timeForMove = 0;
             MoveWizard();
         }
-        if (_highestScore % 10 == 0 || _checkIfHit == false)
+        if (_highestScore % 5 == 0 || _checkIfHit == false)
         {
             spawnOrbs();
             if (!_moveToRight)
