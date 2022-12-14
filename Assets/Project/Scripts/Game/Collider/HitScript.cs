@@ -10,7 +10,7 @@ public class HitScript : MonoBehaviour
     public Sprite noneSprite;
     public int subtract_points = 5;
     public int add_points = 10;
-    public Collision2D collision;
+   // public Collision2D collision;
     bool hardhit;
     //public static System.Threading.Tasks.Task Delay(TimeSpan delay);
     public void resetLayout()
@@ -47,6 +47,7 @@ public class HitScript : MonoBehaviour
         {
             Debug.Log("LavaOrb punched");
             SceneManager.LoadScene("Death");
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Cat")

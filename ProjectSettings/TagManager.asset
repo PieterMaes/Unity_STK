@@ -9,6 +9,7 @@ TagManager:
   - LavaOrb
   - Cat
   - LavaWave
+  - Collider
   layers:
   - Default
   - TransparentFX
