@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour
         Debug.Log("New HR:" + newHR + this.interval);
 
         if (newHR > 100f) {
-            this.interval = 1;
+            this.interval = 5;
             CancelInvoke();
            // GetComponent<HR>().color = Color.red;
             InvokeRepeating("Spawn", interval, interval);
