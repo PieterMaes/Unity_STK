@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 {
     [Header ("Target")]
@@ -27,6 +27,7 @@ public class Spawner : MonoBehaviour
         private hyperateSocket hyperateObj;
 
     public GameObject stext;
+    public GameObject hrtext;
 
     void updateInterval(float newInterval) {
         interval = newInterval;
@@ -36,40 +37,29 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         stext = GameObject.Find("ScoreText");
+        hrtext = GameObject.Find("HR");
 
         InvokeRepeating("Spawn", interval, interval);
-       // Debug.Log(hyperateObj.hr);
+        Debug.Log(hyperateObj.hr);
     }
 
     private void Spawn()
     {
         ScoreText st = stext.transform.GetComponent<ScoreText>();
-        //float newHR = hyperateObj.GetHR();
-       // Debug.Log("New HR:", newHR);
+        float newHR = hyperateObj.hr;
+        Debug.Log("New HR:" + newHR + this.interval);
 
-        if (st.GetScore() == 50)
-        {
-            this.interval -= 2;
+        if (newHR > 100f) {
+            this.interval = 1;
             CancelInvoke();
+           // GetComponent<HR>().color = Color.red;
             InvokeRepeating("Spawn", interval, interval);
         }
-
-        else if (st.GetScore() == 150)
+        if (newHR <= 100f)
         {
-            this.interval -= (float)1.5;
+            this.interval = 10;
             CancelInvoke();
-            InvokeRepeating("Spawn", interval, interval);
-        }
-        else if (st.GetScore() == 300)
-        {
-            this.interval *= (float)0.85;
-            CancelInvoke();
-            InvokeRepeating("Spawn", interval, interval);
-        }
-        else if (st.GetScore() == 500)
-        {
-            this.interval *= (float)0.9;
-            CancelInvoke();
+            //GetComponent<HR>().color = Color.yellow;
             InvokeRepeating("Spawn", interval, interval);
         }
 
@@ -83,8 +73,11 @@ public class Spawner : MonoBehaviour
         instance.transform.SetParent(transform);
 
         //change srpite of object
-/*        Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
-        instance.GetComponent<SpriteRenderer>().sprite = randomSprite;*/
+        /*        Sprite randomSprite = sprites[Random.Range(0, sprites.Length)];
+                instance.GetComponent<SpriteRenderer>().sprite = randomSprite;*/
     }
 
+    void Update() {
+        Debug.Log(hyperateObj.hr);
+    }
 }

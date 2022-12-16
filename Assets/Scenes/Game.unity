@@ -1101,7 +1101,8 @@ MonoBehaviour:
   regression_rate: 0
   timeUntilSpawnRateIncrease: 0
   hyperateObj: {fileID: 1599874981}
-  stext: {fileID: 0}
+  stext: {fileID: 895861772}
+  hrtext: {fileID: 0}
 --- !u!4 &651470427
 Transform:
   m_ObjectHideFlags: 0
@@ -2335,7 +2336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9686275, g: 0.34901962, b: 0.12941177, a: 1}
+  m_Color: {r: 1, g: 0.45490196, b: 0.12941177, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
