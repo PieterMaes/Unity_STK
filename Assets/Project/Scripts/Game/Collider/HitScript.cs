@@ -80,6 +80,5 @@ public class HitScript : MonoBehaviour
             var text = GameObject.Find("ScoreText");
             text.transform.GetComponent<ScoreText>().SetScore(5);
         }
-
     }
 }
