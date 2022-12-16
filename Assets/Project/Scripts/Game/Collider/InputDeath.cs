@@ -5,7 +5,7 @@ using System.IO.Ports;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InputStart : MonoBehaviour
+public class InputDeath : MonoBehaviour
 {
     SerialPort sp1;
     SerialPort sp2;
@@ -37,7 +37,7 @@ public class InputStart : MonoBehaviour
             {
                 message = "Start Game";
                 Debug.Log(message);
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("Title");
             }
             
         }
@@ -48,7 +48,7 @@ public class InputStart : MonoBehaviour
             {
                 message = "Start Game";
                 Debug.Log(message);
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("Title");
             }
         }
     }
