@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7755d1cbf3556449568283b86aca30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catMeow: {fileID: 8300000, guid: 0a6637771551c4142bdb5952a4f641b4, type: 3}
+  catAngry: {fileID: 8300000, guid: b266cd4232b80204ea1ab3d7c075814d, type: 3}
+  wizardOof: {fileID: 8300000, guid: 934f241c0ee273c4cba9324c97e531b3, type: 3}
   boxSprite: {fileID: 21300000, guid: 230a10080867fe346a604b4ea6acecf7, type: 3}
   tapSprite: {fileID: 21300000, guid: 65930a1277d04bf4a90b8666577441af, type: 3}
   noneSprite: {fileID: 0}

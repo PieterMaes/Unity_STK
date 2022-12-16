@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class HitScript : MonoBehaviour
 {
+    
+    [Header("AudioSounds")] public AudioClip catMeow;
+    public AudioClip catAngry;
+    public AudioClip wizardOof;
+    
+    [Header("Tap sprites")]
     public Sprite boxSprite;
     public Sprite tapSprite;
     public Sprite noneSprite;
@@ -63,10 +69,12 @@ public class HitScript : MonoBehaviour
             //add the wanted points of this prefab tp score, located in scoretext script
             if (hardhit == true)
             {   
+                AudioSource.PlayClipAtPoint(catAngry, transform.position);
                 GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(-subtract_points);
             }
             else
             {
+                AudioSource.PlayClipAtPoint(catMeow, transform.position);
                 GameObject.Find("ScoreText").transform.GetComponent<ScoreText>().SetScore(add_points);
             }
             //kill object
@@ -75,6 +83,7 @@ public class HitScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Wizard")
         {
+            AudioSource.PlayClipAtPoint(wizardOof, transform.position);
             Debug.Log("Wizard punched");
             collision.gameObject.GetComponent<Wizard1>().hitWizard();
             var text = GameObject.Find("ScoreText");
