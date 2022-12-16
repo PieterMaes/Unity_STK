@@ -3,7 +3,13 @@ guid: 6a7755d1cbf3556449568283b86aca30
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - catMeow: {fileID: 8300000, guid: 0a6637771551c4142bdb5952a4f641b4, type: 3}
+  - catAngry: {fileID: 8300000, guid: b266cd4232b80204ea1ab3d7c075814d, type: 3}
+  - wizardOof: {fileID: 8300000, guid: 934f241c0ee273c4cba9324c97e531b3, type: 3}
+  - boxSprite: {instanceID: 0}
+  - tapSprite: {instanceID: 0}
+  - noneSprite: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
