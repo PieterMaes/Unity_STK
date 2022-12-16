@@ -7,9 +7,7 @@ using UnityEngine.UI;
 
 public class Wizard1 : MonoBehaviour
 {
-    
-
-    
+   
     private int _health;
     private bool _isDropping;
 
