@@ -23,7 +23,9 @@ public class Boss : MonoBehaviour
     private int _highestScore;
     private int _xPosFloat;
     private float _speed;
-
+    private float _timeForSpeedUp;
+    private float _intervalOrbs;
+    
     //variables to use for score
     private GameObject _text;
     private ScoreText _st;
@@ -53,6 +55,7 @@ public class Boss : MonoBehaviour
         _text = GameObject.Find("ScoreText");
         _st = _text.transform.GetComponent<ScoreText>();
         _interval = 4;
+        _intervalOrbs = 5;
         _speed = 0.1f;
 
         _leftCorner = -7.5f;
@@ -73,6 +76,7 @@ public class Boss : MonoBehaviour
         // On every 25 score there is a wizard boss stage, killing the boss as soon
         // as possible is key for maintaining a 
         _timeForMove += Time.deltaTime;
+        _timeForSpeedUp += Time.deltaTime;
         if (_highestScore < _st.GetScore()) _highestScore = _st.GetScore();
         if (_isDestroyed)
         {
@@ -85,6 +89,7 @@ public class Boss : MonoBehaviour
             wizard.transform.position = new Vector2(0, 5);
             if (_interval > .5) _interval *= 0.75f;
             else _interval *= .95f;
+            _intervalOrbs -= 0.1f;
         }
 
         if (_timeForMove >= _interval)
@@ -92,7 +97,7 @@ public class Boss : MonoBehaviour
             _timeForMove = 0;
             MoveWizard();
         }
-        if (_highestScore % 10 == 0 || _checkIfHit == false)
+        if (_highestScore % 10 == 0 || _checkIfHit == false || _timeForSpeedUp >= 15)
         {
             spawnOrbs();
             if (!_moveToRight)
@@ -131,6 +136,7 @@ public class Boss : MonoBehaviour
                         {
                             //when wizard is hit, ideally this is replaced in wizard itself
                             //wizard.gameObject.GetComponent<SpriteRenderer>().sprite = wizardHurt;
+                            _timeForSpeedUp = 0;
                             _moveToRight = false;
                             _checkIfHit = true;
                             if(wizard.gameObject.GetComponent<Wizard1>().getHealth() == 0) _isDestroyed = true;
@@ -234,7 +240,7 @@ public class Boss : MonoBehaviour
     {
         
         _totalTime += Time.deltaTime;
-        if (!(_totalTime >= 5)) return;
+        if (!(_totalTime >= _intervalOrbs)) return;
         _totalTime = 0;
         Instantiate(lavaOrb).transform.position = new Vector2(Random.Range(-6,8), -5);
 
