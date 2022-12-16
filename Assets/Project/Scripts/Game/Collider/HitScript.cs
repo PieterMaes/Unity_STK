@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -81,7 +82,7 @@ public class HitScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.tag == "Wizard")
+        if (collision.gameObject.CompareTag("Wizard"))
         {
             AudioSource.PlayClipAtPoint(wizardOof, transform.position);
             Debug.Log("Wizard punched");
