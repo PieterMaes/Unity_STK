@@ -36,7 +36,7 @@ public class InputStart : MonoBehaviour
             if (sp1.BytesToRead > 0)
             {
                 message = "Start Game";
-                SceneManager.LoadScene(name);
+                SceneManager.LoadScene("Game");
                 Debug.Log(message);
             }
             
@@ -47,7 +47,7 @@ public class InputStart : MonoBehaviour
             if (sp2.BytesToRead > 0)
             {
                 message = "Start Game";
-                SceneManager.LoadScene(name);
+                SceneManager.LoadScene("Game");
                 Debug.Log(message);
             }
         }
