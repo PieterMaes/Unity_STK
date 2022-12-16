@@ -35,7 +35,7 @@ public class InputDeath : MonoBehaviour
             string message = "";
             if (sp1.BytesToRead > 0)
             {
-                message = "Start Game";
+                message = "Start Game again";
                 Debug.Log(message);
                 SceneManager.LoadScene("Title");
             }
@@ -46,7 +46,7 @@ public class InputDeath : MonoBehaviour
             string message = "";
             if (sp2.BytesToRead > 0)
             {
-                message = "Start Game";
+                message = "Start Game again";
                 Debug.Log(message);
                 SceneManager.LoadScene("Title");
             }
