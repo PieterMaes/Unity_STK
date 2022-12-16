@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7606175975560696616}
   m_Layer: 6
   m_Name: Wizard
-  m_TagString: Wizard
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
