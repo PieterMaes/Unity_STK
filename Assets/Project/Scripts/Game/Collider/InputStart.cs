@@ -37,6 +37,8 @@ public class InputStart : MonoBehaviour
             {
                 message = "Start Game";
                 Debug.Log(message);
+                sp1.Close();
+                sp2.Close();
                 SceneManager.LoadScene("Game");
             }
             
@@ -48,6 +50,8 @@ public class InputStart : MonoBehaviour
             {
                 message = "Start Game";
                 Debug.Log(message);
+                sp1.Close();
+                sp2.Close();
                 SceneManager.LoadScene("Game");
             }
         }
