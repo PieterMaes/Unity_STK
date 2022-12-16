@@ -92,7 +92,7 @@ public class Boss : MonoBehaviour
             _timeForMove = 0;
             MoveWizard();
         }
-        if (_highestScore % 5 == 0 || _checkIfHit == false)
+        if (_highestScore % 10 == 0 || _checkIfHit == false)
         {
             spawnOrbs();
             if (!_moveToRight)
@@ -234,7 +234,7 @@ public class Boss : MonoBehaviour
     {
         
         _totalTime += Time.deltaTime;
-        if (!(_totalTime >= 1.400)) return;
+        if (!(_totalTime >= 5)) return;
         _totalTime = 0;
         Instantiate(lavaOrb).transform.position = new Vector2(Random.Range(-6,8), -5);
 

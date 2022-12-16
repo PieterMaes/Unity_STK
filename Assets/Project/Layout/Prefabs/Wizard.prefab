@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7308573241742805418}
   - component: {fileID: 7604846166896663824}
   - component: {fileID: -7606175975560696616}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Wizard
-  m_TagString: Untagged
+  m_TagString: Wizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,5 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9, y: 3.05}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
