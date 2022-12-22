@@ -801,7 +801,7 @@ RectTransform:
   m_GameObject: {fileID: 1443270024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1375, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1767811779}
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2353766721717150103, guid: 695bd86a053b80d448a96135b7aa020a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03f927e5ec3025d4f82568214410b9ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Punch to start!
+  m_Text: Pet the cat to start
 --- !u!222 &1767811781
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -16,6 +16,6 @@ public class KillAfterSeconds : MonoBehaviour
     void Update()
     {
         _time += Time.deltaTime;
-        if(_time > 1) Destroy(this.gameObject);
+        if(_time > 2) Destroy(this.gameObject);
     }
 }
