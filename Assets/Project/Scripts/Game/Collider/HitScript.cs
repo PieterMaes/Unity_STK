@@ -20,6 +20,7 @@ public class HitScript : MonoBehaviour
    // public Collision2D collision;
     bool hardhit;
 
+    public GameObject player;
     void Start()
     {
         this.GetComponent<BoxCollider2D>().enabled = false;
@@ -59,9 +60,16 @@ public class HitScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "LavaOrb")
         {
-            Debug.Log("LavaOrb punched");
-            SceneManager.LoadScene("Death");
-            Destroy(collision.gameObject);
+            if (player.gameObject.GetComponent<Health>().health >= 2)
+            {
+                player.gameObject.GetComponent<Health>().health -= 1;
+            }
+            else
+            {
+                Debug.Log("LavaOrb punched");
+                SceneManager.LoadScene("Death");
+                Destroy(collision.gameObject);
+            }
         }
         Debug.Log("In Triggermethod");
 
