@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System;
 using System.IO.Ports;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class InputController : MonoBehaviour
+public class InputTest : MonoBehaviour
 {
     public string inputString;
     public GameObject tile;
@@ -43,8 +44,6 @@ public class InputController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // inputString = "AD1H";
-        //CheckTiles();
         if (!sp1.IsOpen){
             sp1.Open();
             print("opened sp");
@@ -62,7 +61,16 @@ public class InputController : MonoBehaviour
             {
                 message = sp1.ReadLine();
                 inputString = message;
-                CheckTiles();
+                string substr = inputString.Substring(0, 3);
+
+                if (substr == "AF2")
+                {
+                    CheckTiles();
+                }
+                else if (substr == "AD1")
+                {
+                    SceneManager.LoadScene("Game");
+                }
                 Debug.Log(message);
             }
             
@@ -75,7 +83,16 @@ public class InputController : MonoBehaviour
             {
                 message = sp2.ReadLine();
                 inputString = message;
-                CheckTiles();
+                string substr = inputString.Substring(0, 3);
+
+                if (substr == "AF2")
+                {
+                    CheckTiles();
+                }
+                else if (substr == "AD1")
+                {
+                    SceneManager.LoadScene("Game");
+                }
                 Debug.Log(message);
             }
         }

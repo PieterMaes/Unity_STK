@@ -44,7 +44,7 @@ public class HitScript : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = boxSprite;
         this.GetComponent<BoxCollider2D>().enabled = true;
         hardhit = true;
-        Invoke("resetLayout", 1);//this will happen after 2 seconds
+        Invoke("resetLayout", 1);
     }
 
     public void hitSoft()
